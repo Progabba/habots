@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
+
 import sys
 from pathlib import Path
 import os
@@ -87,11 +88,11 @@ WSGI_APPLICATION = "config.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-if 'test' in sys.argv:
+if "test" in sys.argv:
     DATABASE = {
-        'default':{
-            'ENGINE':'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'test_db_sqlite3',
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "test_db_sqlite3",
         }
     }
 else:

@@ -34,7 +34,9 @@ def send_reminder(habit_id):
 
         # Проверяем, есть ли Telegram Chat ID у пользователя
         if not habit.user.telegram_chat_id:
-            logger.warning(f"Пользователь {habit.user.username} не указал Telegram Chat ID.")
+            logger.warning(
+                f"Пользователь {habit.user.username} не указал Telegram Chat ID."
+            )
             return
 
         # Формируем текст уведомления
@@ -57,7 +59,9 @@ def send_reminder(habit_id):
 
         # Проверяем статус ответа
         if response.status_code == 200:
-            logger.info(f"Уведомление успешно отправлено для пользователя {habit.user.username}.")
+            logger.info(
+                f"Уведомление успешно отправлено для пользователя {habit.user.username}."
+            )
         else:
             logger.error(
                 f"Ошибка при отправке уведомления для пользователя {habit.user.username}: {response.status_code}, {response.text}"
