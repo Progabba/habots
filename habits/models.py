@@ -1,6 +1,6 @@
 from django.db import models
-from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
+from django.conf import settings  # Для использования AUTH_USER_MODEL
 
 
 class Habit(models.Model):
@@ -23,7 +23,7 @@ class Habit(models.Model):
         Методы:
             __str__: Возвращает строковое представление привычки, отображающее её действие.
         """
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="habits")
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="habits")
     action = models.CharField(max_length=255)
     place = models.CharField(max_length=255)
     time = models.TimeField()
