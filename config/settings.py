@@ -26,7 +26,7 @@ TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("SECRET_KEY")
+SECRET_KEY = "django-insecure-foio1y()ctbp&)&#6)+0*o_luqsy)#$53uz0x=au&6_w@k@_i%"
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
