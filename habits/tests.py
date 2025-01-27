@@ -1,6 +1,6 @@
 from django.test import TestCase
-from .models import Habit
-from django.contrib.auth.models import User
+# from .models import Habit
+# from django.contrib.auth.models import User
 
 
 class HabitModelTest(TestCase):
