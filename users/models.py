@@ -3,9 +3,23 @@ from django.db import models
 
 
 class User(AbstractUser):
-    avatar = models.ImageField(upload_to='avatars/', blank=True, null=True)
-    phone_number = models.CharField(max_length=15, blank=True, null=True)
-    country = models.CharField(max_length=100, blank=True, null=True)
+    """
+    Кастомная модель пользователя, расширяющая стандартную модель AbstractUser.
+
+    Поля:
+        telegram_chat_id (CharField): Telegram Chat ID пользователя,
+            используется для отправки уведомлений (необязательное поле).
+
+    Методы:
+        __str__: Возвращает строковое представление пользователя, отображающее его имя пользователя.
+    """
+
+    telegram_chat_id = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        help_text="Telegram Chat ID для отправки уведомлений",
+    )
 
     def __str__(self):
         return self.username
