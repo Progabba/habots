@@ -32,7 +32,7 @@ SECRET_KEY = "django-insecure-foio1y()ctbp&)&#6)+0*o_luqsy)#$53uz0x=au&6_w@k@_i%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True if os.getenv("DEBUG") == "True" else False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -153,7 +153,7 @@ STATICFILES_DIRS = [
     / "static"
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_ROOT = BASE_DIR / "staticfiles"  # Папка для собранных файлов collectstatic
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
